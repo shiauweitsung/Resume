@@ -10,7 +10,9 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0"
+    "vue-router": "^3.2.0",
+    "vue-awesome-swiper": "^4.1.1",
+    "swiper": "^5.4.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -38,7 +40,18 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "consistent-this": [
+        0,
+        "vm"
+      ],
+      "@typescript-eslint/no-this-alias": [
+        "off"
+      ],
+      "@typescript-eslint/camelcase": "off",
+      "prefer-const": "off",
+      "import/no-webpack-loader-syntax": "off"
+    }
   },
   "browserslist": [
     "> 1%",
