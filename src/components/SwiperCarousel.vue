@@ -1,17 +1,17 @@
 <template>
   <div>
     <!-- Swiper -->
-    <swiper class="swiper">
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
-      <swiper-slide>Slide 6</swiper-slide>
-      <swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide>
-      <swiper-slide>Slide 9</swiper-slide>
-      <swiper-slide>Slide 10</swiper-slide>
+    <swiper
+      class="swiper"
+      :options="swiperOption"
+      :class="swiperOption.class.wrap"
+    >
+      <swiper-slide v-for="(item, i) in 3" :key="i">
+        <slot :name="i"></slot>
+      </swiper-slide>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
+      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -23,14 +23,7 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  // updated() {
-  //   const swiper = new Swiper('.swiper-container', { // eslint-disable-line no-unused-vars
-  //     navigation: {
-  //       nextEl: '.swiper-button-next',
-  //       prevEl: '.swiper-button-prev',
-  //     },
-  //   });
-  // },
+  props: ['swiperOption'],
 };
 </script>
 <style scoped>
@@ -43,8 +36,6 @@ export default {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -58,4 +49,4 @@ export default {
   -webkit-align-items: center;
   align-items: center;
 }
-</style>>
+</style>
