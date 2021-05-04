@@ -1,15 +1,9 @@
 .vr {
   display: flex;
+  width: 100%;
+  height: 100%;
 
-  &-left {
-    flex-basis: 50%;
-    max-width: 50%;
-  }
 
-  &-right {
-    flex-basis: 50%;
-    max-width: 50%;
-  }
 }
 
 .animal {
@@ -21,29 +15,46 @@
     flex-basis: 50%;
     max-width: 50%;
 
+    @media(max-width:768px) {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+
     &-title {
       height: 50%;
 
-      &>h4 {}
+      &>h4 {
+        line-height: 1em;
+        padding-top: 30px;
+        font-size: 50px;
+      }
 
       &>p {
+        margin-top: 30px;
         margin-left: 40%;
         text-align: left;
         line-height: 1.4rem;
         width: 60%;
+
+        @media(max-width:768px) {
+          margin-left: 20%;
+        }
       }
 
-      &>div {
+      &-go {
         margin-left: 40%;
         width: 60%;
+        display: flex;
+        margin-top: 60px;
 
         &>a {
-          display: block;
+          display: inline-block;
           position: relative;
           text-align: left;
-          margin-top: 60px;
           color: black;
           transition: ease-in-out .4s;
+          padding-bottom: 8px;
+          border-bottom: 1px solid black;
 
           &:hover {
             color: #ff9a9e;
@@ -69,6 +80,13 @@
           }
         }
       }
+
+      &-animation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        position: relative;
+      }
     }
 
     &-info {
@@ -77,11 +95,14 @@
       &-descript {
         display: flex;
         justify-content: center;
+        height: 100%;
 
         &>p {
           display: flex;
           align-items: center;
+          justify-content: center;
           background-color: #f8e1e1;
+          text-align: left;
           padding: 15px;
           line-height: 1.2rem;
           max-width: 50%;
@@ -110,6 +131,10 @@
     background-size: cover;
     height: 100%;
     width: 100%;
+
+    @media(max-width:768px) {
+      display: none;
+    }
   }
 }
 
@@ -117,6 +142,7 @@
   display: flex;
   height: 100%;
   width: 100%;
+  background-color: #4d4d4f;
 
   &-left {
     flex-basis: 50%;
@@ -127,9 +153,21 @@
 
     &-img {
       height: 80%;
-      width: 30%;
+      width: 300px;
       position: relative;
-      border: 1px solid #b99655;
+      border: 3px solid #b99655;
+      box-shadow: 0px 0px 15px 5px #353535;
+      z-index: 8;
+
+      &>img {
+        width: 100%;
+        border-radius: 50%;
+        position: absolute;
+        left: -100px;
+        top: 40%;
+        transform: translateY(-40%);
+        z-index: 9;
+      }
     }
   }
 
@@ -137,18 +175,81 @@
     flex-basis: 50%;
     max-width: 50%;
     height: 80%;
+    position: relative;
+    z-index: 10;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: auto;
+    color: #e9e9e9;
+    margin-left: 30px;
 
     &-title {
       text-align: left;
+      font-size: 40px;
+      line-height: 1em;
+      margin-bottom: 60px;
     }
 
     &-info {
       display: flex;
       flex-direction: column;
       text-align: left;
+      line-height: 1em;
+      margin-bottom: 40px;
+
+      &>a {
+        margin-top: 30px;
+        display: inline;
+        color: #e9e9e9;
+        transition: all .5s;
+        width: 50px;
+        text-align: center;
+        border: 1px solid #e9e9e9;
+        border-radius: 10px;
+        padding: 8px;
+        position: relative;
+        box-shadow: 0 0 0 1em rgba(#fff, 0);
+        animation: pulse 1s infinite;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+          box-shadow: 0 0 0 1em rgba(#fff, 0);
+          animation: pulse 1s infinite 1s;
+        }
+
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 0 0 0 #34e89e;
+          }
+        }
+      }
     }
+  }
+
+  &-bg {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 200px;
+    background-color: #818181;
+    clip-path: polygon(0 0, 100% 0, 61% 100%, 0 100%);
+    z-index: 5;
+  }
+
+  &-bg2 {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 200px;
+    background-color: #818181;
+    clip-path: polygon(61% 0, 100% 0%, 100% 100%, 0 100%);
+    z-index: 5;
   }
 }

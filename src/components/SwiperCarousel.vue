@@ -48,5 +48,6 @@ export default {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  overflow: hidden;
 }
 </style>

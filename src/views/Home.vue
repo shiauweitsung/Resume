@@ -9,11 +9,11 @@
               <p>
                 這幾年逐漸流行飼養家庭寵物，隨著養育率提高，棄養率也隨之升高，那些逞一時的新鮮感卻讓毛小孩們有一輩子的陰影，提倡領養代替購買。珍惜身邊的毛小孩。
               </p>
-              <div>
+              <div class="animal-left-title-go">
                 <a
                   href="https://shiauweitsung.github.io/StrayAnimal/#/"
                   target="_blank"
-                  >前往</a
+                  >Go</a
                 >
               </div>
             </div>
@@ -30,34 +30,27 @@
       <template #1>
         <div class="razer">
           <div class="razer-left">
-            <div class="razer-left-img"></div>
+            <div class="razer-left-img">
+              <img src="~@/assets/images/razer.jpg" alt="" />
+            </div>
           </div>
           <div class="razer-right">
-            <div class="razer-right-title">ShiauRazer</div>
+            <div class="razer-right-title">電競商品</div>
             <div class="razer-right-info">
-              <p>123456</p>
+              <p>擁有全部雷蛇經典商品代理、歡迎前往選購</p>
               <a href="">前往</a>
             </div>
           </div>
+          <div class="razer-bg"></div>
+          <div class="razer-bg2"></div>
         </div>
       </template>
       <template #2>
         <div class="vr">
-          <div class="vr-left">
-            <div class="vr-left-title">
-              <h4>vr title</h4>
-            </div>
-            <div class="vr-left-cont">
-              <div class="vr-left-cont-info">description</div>
-              <div class="vr-left-cont-btn">
-                <button>click</button>
-              </div>
-            </div>
-          </div>
-          <div class="vr-right">
-            <p>背景圖 or img</p>
-            <p>浮動標題</p>
-          </div>
+          <h4>VR 虛擬實境</h4>
+
+          全新技術．全新體驗 讓你意想不到的新玩法。<br />
+          還在體驗一般的電腦遊戲嗎? 現在正夯的VR虛擬實境、VR電競，趕快來體驗。
         </div>
       </template>
     </Swiper>
@@ -74,6 +67,7 @@ export default {
   data() {
     return {
       swiperOption: {
+        loop: true,
         class: {
           wrap: 'index-swiper-wrap',
         },
@@ -93,5 +87,8 @@ export default {
 <style lang="scss" >
 .index-swiper-wrap {
   height: calc(100vh - 70px) !important;
+  @media (max-width: 768px) {
+    height: calc(100vh - 56px) !important;
+  }
 }
 </style>
