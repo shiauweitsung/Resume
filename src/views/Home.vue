@@ -47,10 +47,32 @@
       </template>
       <template #2>
         <div class="vr">
-          <h4>VR 虛擬實境</h4>
-
-          全新技術．全新體驗 讓你意想不到的新玩法。<br />
-          還在體驗一般的電腦遊戲嗎? 現在正夯的VR虛擬實境、VR電競，趕快來體驗。
+          <div class="vr-bg"></div>
+          <div class="vr-info">
+            <h4>VR 虛擬實境</h4>
+            全新技術．全新體驗 讓你意想不到的新玩法。<br />
+            還在體驗一般的電腦遊戲嗎? 現在正夯的VR虛擬實境、VR電競，趕快來體驗。
+            <br />
+            高科技VR頭顯、智能VR手把感應器、360度廣角定位、4K超清畫質、60fps，極致尊榮體驗。
+            <br />
+            <a
+              href="https://shiauweitsung.github.io/VueVR/#/"
+              class="vr-info-link"
+              target="_blank"
+              >立即前往</a
+            >
+          </div>
+          <div class="vr-list">
+            <div>
+              <img src="~@/assets/images/vr-head.png" alt="" />
+            </div>
+            <div>
+              <img src="~@/assets/images/vr-hand.png" alt="" />
+            </div>
+            <div>
+              <img src="~@/assets/images/vr-control.png" alt="" />
+            </div>
+          </div>
         </div>
       </template>
     </Swiper>

@@ -2,8 +2,181 @@
   display: flex;
   width: 100%;
   height: 100%;
+  // background-image: linear-gradient(270deg, #D9AFD9 0%, #97D9E1 100%);
+  color: #5e5e5e;
+  position: relative;
+  z-index: 9;
 
+  @media(max-width:768px) {
+    justify-content: center;
+  }
 
+  &-bg {
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    background: url('~@/assets/images/vr-bg.jpg');
+    background-size: cover;
+    background-position: center left;
+    opacity: 0.5;
+    z-index: 1;
+
+    @media(max-width:768px) {
+      background-position: center;
+    }
+  }
+
+  &-info {
+    margin-top: 100px;
+    margin-left: 200px;
+    max-width: 410px;
+    width: 100%;
+    margin-right: 60px;
+    text-align: left;
+    line-height: 1.4rem;
+    z-index: 9;
+
+    @media(max-width:768px) {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 0px 40px;
+    }
+
+    @media(max-width:576px) {
+      padding: 0px 50px;
+      font-size: 16px;
+    }
+
+    &>h4 {
+      font-size: 26px;
+      margin-bottom: 30px;
+      color: black;
+
+      @media(max-width:576px) {
+        font-size: 22px;
+      }
+    }
+
+    &-link {
+      margin-top: 30px;
+      padding: 20px;
+      display: inline-block;
+      color: #5e5e5e;
+      position: relative;
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border: 2px solid #5e5e5e;
+        transition: transform .5s, box-shadow .5s;
+        box-shadow: 0px 0px 0px 0px #ffffff;
+      }
+
+      &::after {
+        transform: translate(3px, 3px);
+      }
+
+      &::before {
+        transform: translate(-3px, -3px);
+      }
+
+      &:hover {
+
+        &::after,
+        &::before {
+          transform: translate(0);
+          box-shadow: 0px 0px 12px 5px #919191;
+        }
+      }
+    }
+  }
+
+  &-list {
+    position: absolute;
+    display: flex;
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    z-index: 9;
+
+    @media(max-width:576px) {
+      bottom: 90px;
+    }
+
+    &>div {
+      margin: 0px 30px;
+      position: relative;
+      animation: upDown 1s ease-in-out infinite alternate;
+      width: 200px;
+
+      @media(max-width:768px) {
+        width: 150px;
+      }
+
+      @media(max-width:576px) {
+        margin: 0px 15px;
+        width: 100px;
+        font-size: 14px;
+      }
+
+      &::after {
+        content: 'VR頭顯';
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+      }
+
+      @keyframes upDown {
+        0% {
+          top: 0px;
+        }
+
+        100% {
+          top: 30px;
+        }
+      }
+
+      &>img {
+        width: 100%;
+      }
+    }
+
+    &>div:nth-of-type(2) {
+      animation-delay: 1s;
+
+      &::after {
+        content: 'VR手把';
+      }
+    }
+
+    &>div:nth-of-type(3) {
+      animation-delay: 1.5s;
+
+      &::after {
+        content: '定位器';
+      }
+
+      &>img {
+        width: 150px;
+
+        @media(max-width:768px) {
+          width: 120px;
+        }
+
+        @media(max-width:576px) {
+          width: 95px;
+        }
+      }
+    }
+  }
 }
 
 .animal {
@@ -144,12 +317,27 @@
   width: 100%;
   background-color: #4d4d4f;
 
+  @media(max-width:768px) {
+    position: relative;
+    justify-content: center;
+  }
+
   &-left {
     flex-basis: 50%;
     max-width: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    @media(max-width:768px) {
+      opacity: 0.5;
+      z-index: 9;
+      position: absolute;
+      left: 50%;
+      top: 0px;
+      bottom: 0px;
+      transform: translate(-50%);
+    }
 
     &-img {
       height: 80%;
@@ -184,6 +372,12 @@
     color: #e9e9e9;
     margin-left: 30px;
 
+    @media(max-width:768px) {
+      flex-basis: 100%;
+      max-width: 100%;
+      align-items: center;
+    }
+
     &-title {
       text-align: left;
       font-size: 40px;
@@ -197,6 +391,10 @@
       text-align: left;
       line-height: 1em;
       margin-bottom: 40px;
+
+      @media(max-width:768px) {
+        align-items: center;
+      }
 
       &>a {
         margin-top: 30px;
